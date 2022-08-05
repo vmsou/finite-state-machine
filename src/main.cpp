@@ -9,6 +9,7 @@ linguagem = {x | x ∈ {a, b}*} e cada a seguido por bb
 
 #include <fstream>
 #include <iostream>
+#include <unordered_map>
 
 #include "parser.hpp"
 #include "reading.hpp"
@@ -22,9 +23,12 @@ int main() {
     std::cout << "Arquivos: 'data/text.txt', 'data/valido.txt', 'data/invalido.txt'\n";
     std::cout << "Pressione ENTER (filename vazio) para finalizar programa.\n";
 
-    std::unordered_set<char> alphabet{'a', 'b', 'c'};
-    Tokenizer tokenizer{alphabet};
-    Parser parser{&tokenizer};
+    LanguageMap_T language_map{
+        {"LETTER", {"a", "b", "c"}}
+    };
+
+    Tokenizer tokenizer{ language_map };
+    Parser parser{ &tokenizer };
     TextData td{};
     
     bool is_running = true;
