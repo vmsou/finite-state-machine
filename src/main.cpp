@@ -15,30 +15,6 @@ linguagem = {x | x ∈ {a, b}*} e cada a seguido por bb
 #include "reading.hpp"
 #include "tokenizer.hpp"
 
-bool s_start(std::istream& is);
-bool s0(std::istream& is);
-bool s1(std::istream& is);
-
-
-bool s1(std::istream& is) {
-    char c = is.get();
-    if (c == 'b') return s_start(is);
-    return false;
-}
-
-bool s0(std::istream& is) {
-    char c = is.get();
-    if (c == 'b') return s1(is);
-    return false;
-}
-
-bool s_start(std::istream& is) {
-    char c = is.get();
-    if (c == 'b') return s_start(is);
-    else if (c == 'a') return s0(is);
-    return true;
-}
-
 int main() {
     std::cout << "> Inicio: Maquina de Estado Finito" << '\n';
     std::cout << "Arquivos: 'data/text.txt', 'data/valido.txt', 'data/invalido.txt'\n";
