@@ -7,13 +7,7 @@ alfabeto = {a ,b, c}
 linguagem = {x | x ∈ {a, b}*} e cada a seguido por bb
 */
 
-#include <fstream>
-#include <iostream>
-#include <unordered_map>
-
-#include "parser.hpp"
-#include "reading.hpp"
-#include "tokenizer.hpp"
+#include "main.hpp"
 
 int main() {
     std::cout << "> Inicio: Maquina de Estado Finito" << '\n';
@@ -21,7 +15,7 @@ int main() {
     std::cout << "Pressione ENTER (nome do arquivo vazio) para finalizar programa.\n\n";
 
     LanguageMap_T language_map{
-        {"LETTER", {"a", "b", "c"}}
+        {"LETRA", {"a", "b", "c"}}
     };
 
     Tokenizer tokenizer{ language_map };
@@ -30,7 +24,7 @@ int main() {
     
     bool is_running = true;
     while (is_running) {
-        std::cout << "arquivo: ";
+        std::cout << "Arquivo: ";
         std::string filename;
         std::getline(std::cin, filename);
         
