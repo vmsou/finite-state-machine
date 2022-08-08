@@ -68,9 +68,9 @@ int main() {
         }
     
         for (const std::string &text : td.texts) {
-            ParseResult result = parser.parse(text);
+            bool result = parser.valid(text);
             std::cout << text << ": ";
-            if (result.kind == "VALID") std::cout << "pertence";
+            if (result) std::cout << "pertence";
             else std::cout << "nao pertence";
             std::cout << '\n';
         }
