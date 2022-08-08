@@ -15,8 +15,29 @@ linguagem = {x | x ∈ {a, b}*} e cada a seguido por bb
 #include "reading.hpp"
 #include "tokenizer.hpp"
 
-template <typename T>
-std::ostream &operator<<(std::ostream &os, const std::vector<T> &vector);
+bool s_start(std::istream& is);
+bool s0(std::istream& is);
+bool s1(std::istream& is);
+
+
+bool s1(std::istream& is) {
+    char c = is.get();
+    if (c == 'b') return s_start(is);
+    return false;
+}
+
+bool s0(std::istream& is) {
+    char c = is.get();
+    if (c == 'b') return s1(is);
+    return false;
+}
+
+bool s_start(std::istream& is) {
+    char c = is.get();
+    if (c == 'b') return s_start(is);
+    else if (c == 'a') return s0(is);
+    return true;
+}
 
 int main() {
     std::cout << "> Inicio: Maquina de Estado Finito" << '\n';
@@ -56,15 +77,4 @@ int main() {
         std::cout << '\n';
     }
     std::cout << "> Fim: Maquina de Estado Finito" << '\n';
-}
-
-template <typename T>
-std::ostream &operator<<(std::ostream &os, const std::vector<T> &vector) {
-  os << "[";
-  for (std::size_t i = 0; i < vector.size(); ++i) {
-    os << vector[i];
-    if (i < vector.size() - 1)
-      os << ", ";
-  }
-  return os << "]";
 }

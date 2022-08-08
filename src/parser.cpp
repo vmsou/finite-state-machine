@@ -3,7 +3,7 @@
 Parser::Parser(Tokenizer* tokenizer): tokenizer{ tokenizer } {}
 
 ParseResult Parser::parse(const std::string expr) {
-    std::vector<Token> tokens = this->tokenizer->tokenize(expr);
+    std::deque<Token> tokens = this->tokenizer->tokenize(expr);
 
     bool valid = true;
     bool counting = false;

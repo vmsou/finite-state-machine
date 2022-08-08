@@ -1,8 +1,8 @@
 #pragma once
+#include <deque>
 #include <map>
 #include <sstream>
 #include <string>
-#include <vector>
 #include <unordered_map>
 #include <unordered_set>
 
@@ -34,7 +34,7 @@ struct Tokenizer {
     // Methods
     public:
         std::string get_kind(const std::string& text);
-        std::vector<Token> tokenize(const std::string& text);
+        std::deque<Token> tokenize(const std::string& text);
         Token get();
         const bool is_empty();
 };

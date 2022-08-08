@@ -23,15 +23,14 @@ std::string Tokenizer::get_kind(const std::string& text) {
     return this->reverse_map[text];
 }
 
-std::vector<Token> Tokenizer::tokenize(const std::string& text) {
+std::deque<Token> Tokenizer::tokenize(const std::string& text) {
     this->ss = std::stringstream(text);
-    std::vector<Token> tokens;
+    std::deque<Token> tokens;
 
     while (!this->is_empty()) {
         Token t = this->get();;
         tokens.push_back(t);
     }
-    tokens.emplace_back("END");
     return tokens;
 }
 
