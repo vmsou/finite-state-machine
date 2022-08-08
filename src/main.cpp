@@ -21,7 +21,7 @@ std::ostream &operator<<(std::ostream &os, const std::vector<T> &vector);
 int main() {
     std::cout << "> Inicio: Maquina de Estado Finito" << '\n';
     std::cout << "Arquivos: 'data/text.txt', 'data/valido.txt', 'data/invalido.txt'\n";
-    std::cout << "Pressione ENTER (filename vazio) para finalizar programa.\n";
+    std::cout << "Pressione ENTER (nome do arquivo vazio) para finalizar programa.\n\n";
 
     LanguageMap_T language_map{
         {"LETTER", {"a", "b", "c"}}
@@ -33,7 +33,7 @@ int main() {
     
     bool is_running = true;
     while (is_running) {
-        std::cout << "filename: ";
+        std::cout << "arquivo: ";
         std::string filename;
         std::getline(std::cin, filename);
         
