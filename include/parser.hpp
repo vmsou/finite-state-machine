@@ -1,3 +1,4 @@
+#include <vector>
 #include <string>
 
 #include "tokenizer.hpp"
@@ -18,4 +19,8 @@ class Parser {
     // Methods
     public:
         ParseResult parse(const std::string expr);
+
+        bool ST_START(std::deque<Token>& tokens);
+        bool ST_0(std::deque<Token>& tokens);
+        bool ST_1(std::deque<Token>& tokens);
 };
