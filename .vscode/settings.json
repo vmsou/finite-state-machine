@@ -48,5 +48,6 @@
         "map": "cpp",
         "unordered_set": "cpp",
         "sstream": "cpp"
-    }
+    },
+    "cmake.configureOnOpen": true
 }

@@ -5,7 +5,7 @@ TextData TextData::load(const std::string& filename) {
     if (!ifs) throw std::runtime_error{"Não foi possivel abrir o arquivo."};
     
     TextData td;
-    ifs >> td;
+    if (!(ifs >> td)) throw std::runtime_error("Arquivo inválido.");
     return td;
 }
 
@@ -23,6 +23,8 @@ std::istream& operator>>(std::istream& is, TextData& td) {
     std::string line;
     std::getline(is, line);
     int size = std::stoi(line);
+
+    if (size < 0) is.setstate(std::ios_base::failbit);
     td.size = size;
     
     while (size > 0 && std::getline(is, line)) { 

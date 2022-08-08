@@ -1,5 +1,3 @@
-#include <iostream>
-
 #include "tokenizer.hpp"
 
 /* Token */
