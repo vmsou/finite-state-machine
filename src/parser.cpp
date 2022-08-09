@@ -14,6 +14,7 @@ bool Parser::ST_START(std::deque<Token>& tokens) {
 
     return true;
 }
+
 bool Parser::ST_0(std::deque<Token>& tokens) {
     if (tokens.empty()) return false;
 
@@ -23,6 +24,7 @@ bool Parser::ST_0(std::deque<Token>& tokens) {
     
     return false;
 }
+
 bool Parser::ST_1(std::deque<Token>& tokens) {
     if (tokens.empty()) return false;
 
@@ -33,7 +35,7 @@ bool Parser::ST_1(std::deque<Token>& tokens) {
     return false;
 }
 
-bool Parser::valid(const std::string expr) {
+bool Parser::valid(const std::string& expr) {
     std::deque<Token> tokens = this->tokenizer->tokenize(expr);
 
     bool accepted = this->ST_START(tokens);

@@ -36,10 +36,10 @@ struct Tokenizer {
 
     // Methods
     public:
-        std::string get_kind(const std::string& text);
+        std::string get_kind(const std::string& text) const;
         std::deque<Token> tokenize(const std::string& text);
         Token get();
-        const bool is_empty();
+        bool is_empty() const;
 };
 
 // Functions

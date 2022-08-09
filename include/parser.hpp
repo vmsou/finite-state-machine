@@ -13,8 +13,9 @@ class Parser {
         Parser(Tokenizer* tokenizer);
     // Methods
     public:
-        bool valid(const std::string expr);
-
+        bool valid(const std::string& expr);
+    // States
+    private:
         bool ST_START(std::deque<Token>& tokens);
         bool ST_0(std::deque<Token>& tokens);
         bool ST_1(std::deque<Token>& tokens);

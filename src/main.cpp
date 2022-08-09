@@ -37,7 +37,7 @@ int main() {
             continue;
         }
     
-        for (const std::string &text : td.texts) {
+        for (const std::string& text : td.texts) {
             bool result = parser.valid(text);
             std::cout << text << ": ";
             if (result) std::cout << "pertence";

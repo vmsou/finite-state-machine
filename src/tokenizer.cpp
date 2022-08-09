@@ -18,9 +18,9 @@ Tokenizer::Tokenizer(LanguageMap_T* language_map): language_map{ language_map } 
 }
 
 // Methods
-std::string Tokenizer::get_kind(const std::string& text) {
+std::string Tokenizer::get_kind(const std::string& text) const {
     if (this->reverse_map.find(text) == this->reverse_map.end()) return "INVALID";
-    return this->reverse_map[text];
+    return this->reverse_map.at(text);
 }
 
 std::deque<Token> Tokenizer::tokenize(const std::string& text) {
@@ -46,7 +46,7 @@ Token Tokenizer::get() {
     return Token(kind, text);
 }
 
-const bool Tokenizer::is_empty() { return this->ss.rdbuf()->in_avail() == 0; }
+bool Tokenizer::is_empty() const { return this->ss.rdbuf()->in_avail() == 0; }
 
 // Functions
 std::ostream& operator<<(std::ostream& os, const Token& t) {
