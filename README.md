@@ -12,10 +12,8 @@ linguagem = {x | x ∈ {a, b}*} e cada a seguido por bb
 Se você ter acesso a um terminal
 ```bash
 mkdir build
-cd build
-cmake ..          # ou cmake .. -G "MinGW Makefiles"
-cd ..
-cmake --build .\build\
+cmake -S ./ -B ./build -G "MinGW Makefiles"
+cmake --build ./build/
 .\build\FiniteStateMachine.exe
 ```
 

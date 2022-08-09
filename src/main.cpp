@@ -10,7 +10,7 @@ linguagem = {x | x ∈ {a, b}*} e cada a seguido por bb
 #include "main.hpp"
 
 int main() {
-    std::cout << "> Inicio: Maquina de Estado Finito" << '\n';
+    std::cout << "> Inicio: Maquina de Estados Finitos" << '\n';
     std::cout << "Arquivos: 'data/text.txt', 'data/valido.txt', 'data/invalido.txt'\n";
     std::cout << "Pressione ENTER (nome do arquivo vazio) para finalizar programa.\n\n";
 
@@ -46,5 +46,5 @@ int main() {
         }
         std::cout << '\n';
     }
-    std::cout << "> Fim: Maquina de Estado Finito" << '\n';
+    std::cout << "> Fim: Maquina de Estados Finitos" << '\n';
 }
