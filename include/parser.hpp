@@ -1,3 +1,5 @@
+/* Analisador Sintático e Semântico */
+
 #include <string>
 
 #include "tokenizer.hpp"

@@ -1,3 +1,5 @@
+/* Analisador Léxico */
+
 #pragma once
 #include <deque>
 #include <iostream>
@@ -25,12 +27,12 @@ struct Tokenizer {
     // Attributes
     private:
         std::stringstream ss;
-        LanguageMap_T language_map;
+        LanguageMap_T* language_map;
         std::unordered_map<std::string, std::string> reverse_map;
 
     // Constructors
     public:
-        Tokenizer(const LanguageMap_T& language_map);
+        Tokenizer(LanguageMap_T* language_map);
 
     // Methods
     public:

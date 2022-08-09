@@ -1,3 +1,5 @@
+/* Analisador Léxico */
+
 #include "tokenizer.hpp"
 
 /* Token */
@@ -6,8 +8,8 @@ Token::Token(std::string kind, std::string text): kind{ kind }, text{ text } {}
 
 /* Tokenizer */
 // Constructors
-Tokenizer::Tokenizer(const LanguageMap_T& language_map): language_map{ language_map } {
-    for (const auto& item : language_map) {
+Tokenizer::Tokenizer(LanguageMap_T* language_map): language_map{ language_map } {
+    for (const auto& item : *language_map) {
         const std::string& key = item.first;
         const std::unordered_set<std::string>& value = item.second;
 

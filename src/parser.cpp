@@ -1,3 +1,5 @@
+/* Analisador Sintático e Semântico */
+
 #include "parser.hpp"
 
 Parser::Parser(Tokenizer* tokenizer): tokenizer{ tokenizer } {}

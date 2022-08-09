@@ -18,7 +18,7 @@ int main() {
         {"LETRA", {"a", "b", "c"}}
     };
 
-    Tokenizer tokenizer{ language_map };
+    Tokenizer tokenizer{ &language_map };
     Parser parser{ &tokenizer };
     TextData td{};
     
