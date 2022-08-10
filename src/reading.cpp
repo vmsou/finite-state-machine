@@ -22,11 +22,15 @@ std::ostream& operator<<(std::ostream& os, const TextData& td) {
 std::istream& operator>>(std::istream& is, TextData& td) {
     std::string line;
     std::getline(is, line);
-    int size = std::stoi(line);
+    int size = 0;
 
+    // FAIL: Invalid Size
+    try { size = std::stoi(line); } 
+    catch (const std::invalid_argument& err) { is.setstate(std::ios_base::failbit); }
     if (size < 0) is.setstate(std::ios_base::failbit);
+
+    // Push lines to vector
     td.size = size;
-    
     while (size > 0 && std::getline(is, line)) { 
         td.texts.push_back(line); 
         --size;    

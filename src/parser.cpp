@@ -11,6 +11,7 @@ bool Parser::ST_START(std::deque<Token>& tokens) {
     if (t.kind != "LETRA") return false;
     if (t.text == "b") return this->ST_START(tokens);
     else if (t.text == "a") return this->ST_0(tokens);
+    else if (t.text == "c") return false;
 
     return true;
 }
