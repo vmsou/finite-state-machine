@@ -11,10 +11,10 @@ TextData TextData::load(const std::string& filename) {
 
 std::ostream& operator<<(std::ostream& os, const TextData& td) {
     os << td.size;
-    for (std::size_t i = 0; i < td.texts.size(); ++i) {
+    for (std::size_t i = 0; i < td.size; ++i) {
         const std::string& text = td.texts[i];
         os << text;
-        if (i < td.texts.size() - 1) os << '\n';
+        if (i < td.size - 1) os << '\n';
     }
     return os;
 }
@@ -22,7 +22,7 @@ std::ostream& operator<<(std::ostream& os, const TextData& td) {
 std::istream& operator>>(std::istream& is, TextData& td) {
     std::string line;
     std::getline(is, line);
-    int size = 0;
+    std::size_t size = 0;
 
     // FAIL: Invalid Size
     try { size = std::stoi(line); } 

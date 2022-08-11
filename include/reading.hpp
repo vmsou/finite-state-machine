@@ -4,7 +4,7 @@
 #include <vector>
 
 struct TextData {
-    int size;
+    std::size_t size;
     std::vector<std::string> texts;
 
     static TextData load(const std::string& filename);

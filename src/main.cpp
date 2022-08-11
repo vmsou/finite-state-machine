@@ -70,10 +70,8 @@ int main() {
     
         for (const std::string& text : td.texts) {
             bool result = parser.valid(text);
-            std::cout << text << ": ";
-            if (result) std::cout << "pertence";
-            else std::cout << "nao pertence";
-            std::cout << '\n';
+            std::string msg = result ? "pertence" : "nao pertence";
+            std::cout << text << ": " << msg << '\n';
         }
         std::cout << '\n';
     }
